@@ -1,7 +1,17 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import tailwindcss from "@tailwindcss/vite";
-// https://vite.dev/config/
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+import tailwindcss from '@tailwindcss/vite';
+import react from '@vitejs/plugin-react';
+
+
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+    plugins: [
+        laravel({
+            input: [ 'resources/js/app.jsx'],
+            refresh: true,
+        }),
+        tailwindcss(),
+        react()
+    ],
+    
 });
