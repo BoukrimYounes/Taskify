@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
 import { Link, router, useForm, usePage } from "@inertiajs/react";
 import toast, { Toaster } from 'react-hot-toast';
@@ -6,6 +6,11 @@ import toast, { Toaster } from 'react-hot-toast';
 
 function SignUp() {
 const { flash } = usePage().props;
+
+ useEffect(() => {
+    if (flash?.success) toast.success(flash.success);
+    if (flash?.error) toast.error(flash.error);
+}, [flash]);
 
   const [showPassword, isShowPassword] = useState(false);
   const { data, setData, post, processing, errors } = useForm({
@@ -25,21 +30,12 @@ const { flash } = usePage().props;
 
   function handleSubmit(e) {
     e.preventDefault();
-    post('/register', {
-          onSuccess: () => {
-            toast.success(flash.success);
-          },
-          onError: (errors) => {
-            toast.error(flash.error || errors);
-          }
-      });
-  
-      console.log(errors)
-      
+    post('/register');
     }
   return (
     <div className="w-screen h-screen flex items-center justify-center bg-main">
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+      <Toaster position="top-center" reverseOrder={false} />
         {/* Heading */}
         <h4 className="text-2xl font-bold text-center text-gray-800 mb-2">
           Sign Up
@@ -48,16 +44,7 @@ const { flash } = usePage().props;
           Create an account to get started
         </p>
 
-        {/* Demo Credentials */}
-        <div className="bg-gray-100 p-4 rounded-lg mb-6">
-          <p className="text-sm text-gray-700">
-            <strong>Email:</strong> Firstname.lastname@domain.com
-          </p>
-          <p className="text-sm text-gray-700">
-            <strong>Password:</strong> Firsname@123456
-          </p>
-        </div>
-
+  
         {/* Form */}
         <form  onSubmit={handleSubmit}>
           <div className="flex items-center justify-between gap-4">
@@ -271,7 +258,7 @@ const { flash } = usePage().props;
             Already have an account?{" "}
           </span>
           <Link 
-        href="/"
+        href="/login"
         className="text-sm text-purple-600 hover:underline">
             Sign In
           </Link>

@@ -7,9 +7,9 @@ use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return Inertia::render('SignIn');
-})->name('signin');
+})->name('login');
 
 Route::middleware(['auth'])->group(function () {
 Route::resource('tasks', TaskController::class);
@@ -23,7 +23,7 @@ Route::get('/signup', function () {
     return Inertia::render('SignUp');
 })->name('signup');
 
-Route::get('/error', function () {
+Route::fallback(function () {
     return Inertia::render('Error');
 });
 Route::post('/login',[AuthController::class, 'login'] );

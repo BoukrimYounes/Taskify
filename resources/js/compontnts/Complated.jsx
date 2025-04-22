@@ -1,6 +1,6 @@
 import { router } from "@inertiajs/react";
 import React, { useState } from "react";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 import {
   MdDeleteOutline,
@@ -9,6 +9,7 @@ import {
 } from "react-icons/md";
 
 const CompletedHeader = ({ number }) => (
+  
   <div className="flex justify-between items-center p-3 border-b border-main">
     <h1 className="font-bold text-gray-800 uppercase flex items-center gap-1">
       <MdOutlineDoneAll size={22} className="text-green-500" />
@@ -50,20 +51,18 @@ const CompletedCard = (props) => {
       status: newstatus
     }, {
       onSuccess: () => {
-        toast.success("✅ Task status updated successfully!");
         setEditForm(false);
-                router.reload()
-        
+           router.reload()
       },
-      onError: () => {
-        toast.error("❌ Failed to update task status");
-      }
     });
   };
 
+  
 
   return (
     <>
+   
+
       <div className="group  relative w-full p-6 bg-white border border-slate-100 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 ">
         <div className="absolute top-5 right-5 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-200">
           <button

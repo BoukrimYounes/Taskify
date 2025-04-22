@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
 import { Link , router, useForm, usePage} from "@inertiajs/react";
 import { Flip, ToastContainer } from "react-toastify";
@@ -11,6 +11,11 @@ function SignIn() {
     password: '',
   });
   const { flash } = usePage().props;
+
+  useEffect(() => {
+    if (flash?.success) toast.success(flash.success);
+    if (flash?.error) toast.error(flash.error);
+}, [flash]);
 
   const [showPassword, isShowPassword] = useState(false);
 
@@ -25,29 +30,14 @@ function SignIn() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    post("/login", {
-      onSuccess: () => {
-        toast.success(flash.success);
-      },
-      onError: (errors) => {
-          if (errors.email) {
-            toast.error(`❌ ${errors.email}`);
-          } else if (errors.password) {
-            toast.error(`❌ ${errors.password}`);
-          } else {
-            toast.error(flash.error);
-          }
-      }
-  });
-  console.log(errors)
+    post("/login");
 }
 
   return (
     <div className="w-screen h-screen flex items-center justify-center bg-main">
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
         {/* Heading */}
-        <Toaster />
-        <ToastContainer position="top-center" autoClose={5000} transition={Flip} />
+        <Toaster position="top-center" reverseOrder={false} />
         <h4 className="text-2xl font-bold text-center text-gray-800 mb-2">
           Sign In
         </h4>

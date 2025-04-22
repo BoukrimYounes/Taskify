@@ -2,7 +2,7 @@ import { router, useForm, usePage } from "@inertiajs/react";
 import React, { useState } from "react";
 import { LuListTodo } from "react-icons/lu";
 import { MdDeleteOutline, MdOutlineEdit } from "react-icons/md";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 
 const TodoHeader = ({ number }) => (
@@ -36,8 +36,6 @@ const TodoCard = (props) => {
     Bug: "bg-rose-100 text-rose-800",
     Base: "bg-gray-100 text-gray-600",
   };
-  const { flash } = usePage().props;
-
 
   const [EditForm, setEditForm] = useState(false);
   const [newstatus, setStatus] = useState();
@@ -51,14 +49,9 @@ const TodoCard = (props) => {
       onSuccess: () => {
         // Wrap in setTimeout to ensure toast shows before any potential reload
         setTimeout(() => {
-          toast.success(flash.success);
           setEditForm(false);
            router.reload()
         }, 100);
-      },
-      onError: (errors) => {
-        toast.error(`❌ ${errors.message || flash.error}`);
-        console.error('Update error:', errors);
       }
     });
   };
@@ -68,6 +61,7 @@ const TodoCard = (props) => {
     <>
       <div className="group text-left relative w-full p-6 bg-white border border-slate-100 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1  ">
         <div className="absolute top-5 right-5 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-200">
+         
           <button
             onClick={() => setEditForm(true)}
             className="cursor-pointer  p-2 bg-white hover:bg-slate-50 rounded-lg shadow-sm border border-slate-100"

@@ -10,7 +10,7 @@ import { CgMoveTask } from "react-icons/cg";
 import { TbMenu4 } from "react-icons/tb";
 import { LuLetterText } from "react-icons/lu";
 import { IoTicket } from "react-icons/io5";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 const Navbar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -22,6 +22,11 @@ const Navbar = () => {
     const { user } = usePage().props.auth;
     const { users } = usePage().props;
     const { flash } = usePage().props;
+
+     useEffect(() => {
+        if (flash?.success) toast.success(flash.success);
+        if (flash?.error) toast.error(flash.error);
+    }, [flash]);
 
     const filteredUsers = query === ''
       ? users
@@ -83,8 +88,8 @@ function handleSubmit(e) {
         return;
     }
 
-    post("/tasks")
-            toast.success("✅ Task created successfully!");
+    post("/tasks",{
+        onSuccess: () => {
             setAddTask(false);
             setData({
                 title: "",
@@ -96,14 +101,16 @@ function handleSubmit(e) {
                 assigned_members: [],
             });
             router.reload();
-
-    console.log(errors)
+        }
+    },)
 }
     return (
         <>
+         
             <nav className="bg-main shadow-sm">
                 {/* Desktop Navbar */}
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <Toaster position="top-center" reverseOrder={false} />
                     <div className="flex h-16 items-center justify-between">
                         {/* Logo */}
                         <div className="flex-shrink-0 w-12 md:w-14 lg:w-16 flex  ">
@@ -127,6 +134,7 @@ function handleSubmit(e) {
 
                             {/* Profile Section */}
                             <div className="flex items-center">
+                                
                                 <div
                                     onClick={() =>
                                         setIsDropdownOpen(!isDropdownOpen)
@@ -201,7 +209,9 @@ function handleSubmit(e) {
                             {/* Logout Button */}
                             <button
                                 className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-colors duration-200 ease-in-out"
-                                onClick={() => router.post('/logout')}
+                                onClick={() => router.post('/logout',{
+                                    onSuccess: () => { toast.success(flash.success)}
+                                })}
                             >
                                 Log Out
                             </button>
@@ -216,7 +226,8 @@ function handleSubmit(e) {
                         className="h-screen w-full  fixed inset-0 bg-black/30 backdrop-blur-md z-[100] cursor-pointer transition-opacity"
                     ></div>
 
-                    <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white  p-8 rounded-2xl shadow-2xl w-full max-w-lg z-[10000] border border-white/20">
+                    <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white  p-8 rounded-2xl shadow-2xl w-full max-w-lg z-[10000] border border-white/20 overflow-y-auto h-[calc(100%-70px)]">
+                        
                         <div className="flex items-center justify-between mb-6">
                             <h2 className="text-2xl font-bold text-[#2a2a4]">
                                 <span className="bg-[#e6e6fa] text-[#2a2a4a]  p-2 rounded-md mr-2">

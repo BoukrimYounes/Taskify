@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "@inertiajs/react";
+import { Link, router } from "@inertiajs/react";
 
 function Error() {
   return (
@@ -32,7 +32,7 @@ function Error() {
 
         {/* Back to Home Button */}
         <Link
-          to="/"
+          href ='/login'
           className="inline-block bg-purple-600 text-white py-2 px-6 rounded-lg hover:bg-purple-700 transition duration-300"
         >
           Go Back Home

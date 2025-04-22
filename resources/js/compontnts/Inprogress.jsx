@@ -1,6 +1,6 @@
 import { router, useForm, usePage } from "@inertiajs/react";
 import React, { useState } from "react";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { MdDeleteOutline, MdOutlineEdit } from "react-icons/md";
 import { TbProgressCheck } from "react-icons/tb";
 
@@ -34,7 +34,6 @@ const InProgressCard = (props) => {
     Bug: "bg-rose-100 text-rose-800",
     Base: "bg-gray-100 text-gray-600",
   };
-  const { flash } = usePage().props;
 
   const [EditForm, setEditForm] = useState(false);
   const [newstatus, setStatus] = useState();
@@ -44,11 +43,9 @@ const InProgressCard = (props) => {
        status: newstatus
      }, {
        onSuccess: () => {
-         toast.success(flash.success);
+
          setEditForm(false);
-       },
-       onError: () => {
-         toast.error(flash.error);
+                    router.reload()
        }
      });
    };

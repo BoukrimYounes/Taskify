@@ -10,6 +10,7 @@ class AuthController extends Controller
 {
     public function register(Request $request)
     {
+        try{
         $info = $request->validate([
             'firstname' => ['required', 'max:255'],
             'lastname' => ['required', 'max:255'],
@@ -21,31 +22,36 @@ class AuthController extends Controller
 
         Auth::login($user, $remember = false);
 
-        return redirect()->route('dashbord');
+       
+        return redirect()->route('dashbord')->with('success', 'Account created successfully!');
+    } catch (\Exception $e) {
+        return redirect()->back()->withErrors('error', 'Registration failed. Please try again.');
+    }
     }
 
     
     public function login(Request $request)
     {
-        $infos = $request->validate([
+        $credentials = $request->validate([
             'email' => ['required', 'max:255', 'email'],
             'password' => ['required']
         ]);
-
-
-        if (Auth::attempt($infos, $request->remember)) {
-        return redirect()->intended('dashbord');
-        }else{
-            return back()->withErrors([
-                'failed' =>'The provider credentials do not match our records.'
-            ]);
-        }
+    
+        Auth::attempt($credentials, $request->remember);
+            return redirect()->intended('dashbord')->with('success', 'Welcome back!');
+        
+    
+        return back()->withErrors('error', 'Login failed. Please check your credentials.');
     }
     public function logout(Request $request){
+        try{
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         
-        return redirect('/');
+        return redirect('/login')->with('success', 'Logged out successfully!');
+    } catch (\Exception $e) {
+        return redirect()->back()->withErrors('error', 'Logout failed. Please try again.');
+    }
     }
 }
