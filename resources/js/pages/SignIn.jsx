@@ -46,14 +46,7 @@ function SignIn() {
         </p>
 
         {/* Demo Credentials */}
-        <div className="bg-gray-100 p-4 rounded-lg mb-6">
-          <p className="text-sm text-gray-700">
-            <strong>Email:</strong> Firstname.lastname@domain.com
-          </p>
-          <p className="text-sm text-gray-700">
-            <strong>Password:</strong> Firsname@123456
-          </p>
-        </div>
+      
 
         {/* Form */}
         <form onSubmit={handleSubmit}>
