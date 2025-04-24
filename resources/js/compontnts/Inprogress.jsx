@@ -244,7 +244,7 @@ function Inprogress({tasks}) {
           <InProgressCard
             key={index}
             id={task.id}
-            index={index} // Pass current task index
+            index={task.id} // Pass current task index
             deleteTask={deleteTask} // Pass delete handler
             {...task} // Spread task properties />
           />

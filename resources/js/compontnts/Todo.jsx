@@ -237,10 +237,10 @@ const TodoCard = (props) => {
 const Todo = ({tasks}) => {
 
 
-   const deleteTask = (taskIndex) => {
-      router.delete(`/tasks/${taskIndex}`)
-    };
-
+  const deleteTask = (taskId) => {
+    router.delete(`/tasks/${taskId}`);
+  };
+  
   return (
     <div className="h-[95vh] bg-white rounded-xl shadow-xl overflow-hidden">
       <TodoHeader number={tasks.length} />
@@ -249,7 +249,7 @@ const Todo = ({tasks}) => {
           <TodoCard
             key={index}
             id={task.id}
-            index={index} // Pass current task index
+            index={task.id} // Pass current task index
             deleteTask={deleteTask} // Pass delete handler
             {...task} // Spread task properties
           />

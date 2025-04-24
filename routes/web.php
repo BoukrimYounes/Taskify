@@ -18,7 +18,7 @@ Route::get('/login', function () {
 
 Route::middleware(['auth'])->group(function () {
 Route::resource('tasks', TaskController::class);
-Route::post('/tasks', [TaskController::class, 'store']);
+Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
 Route::get('/dashbord', [DashbordController::class, 'index'])->name('dashbord');
 Route::get('/users',[Controller::class, 'index'] );
 Route::post('/logout',[AuthController::class, 'logout'] )->name('logout');

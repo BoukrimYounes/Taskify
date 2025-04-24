@@ -252,7 +252,7 @@ function Complated({tasks}) {
           <CompletedCard
           key={task.id}
           id={task.id}
-            index={index}
+            index={task.id}
             deleteTask={deleteTask}
             {...task}
           />
