@@ -1,66 +1,135 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1 align="center">
+	<img
+		width="300"
+		alt="TASKIFY"
+		src="https://github.com/Chaimaa101/Taskify/blob/master/storage/public/img/icone_white.jpg?raw=true">
+</h1>
+
+<h3 align="center">
+	TASKIFY– Task Management System
+</h3>
+
+## 📖 Table of Contents
+
+<details>
+<summary>Click to expand</summary>
+
+- [📖 Table of Contents](#-table-of-contents)
+- [📷 Demo](#-demo)
+- [⛓ Description](#-description)
+	- [User Authentication](#user-authentication)
+	- [Task Management](#task-management)
+	- [Task Assignment](#task-assignment)
+	- [Real-Time Updates](#real-time-updates)
+	- [Dashboard](#dashboard)
+	- [Fully Responsive](#fully-responsive)
+- [🔨 Development](#-development)
+	- [Tech Stack](#tech-stack)
+- [☑️ Installation](#-installation)
+	- [Prerequisites](#prerequisites)
+	- [Backend Setup (Laravel)](#backend-setup-laravel)
+	- [Frontend Setup (React)](#frontend-setup-react)
+	- [Usage](#usage)
+- [🤝 Collaborators](#-collaborators)
+
+</details>
+
+# 📷 Demo
+
+https://github.com/user-attachments/assets/adbc0b42-57eb-4da1-84b9-883ce427b29a
+
+# ⛓ Description
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+	<b>TASKIFY</b> is a task management application developed to help users efficiently manage their tasks and collaborate with others. Built with Laravel for the backend and ReactJS with Inertia.js for the frontend, it provides a seamless, modern, and responsive interface for creating, assigning, and updating tasks.
 </p>
 
-## About Laravel
+## 1️⃣ User Authentication
+- Secure user registration and login system.
+- Each user gets their personalized task dashboard upon logging in.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 2️⃣ Task Management
+- Create, update, and delete tasks.
+- Add task details: title, description, deadline, and status (To-do, In Progress, Completed)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 3️⃣ Task Assignment
+- Assign one or more members to a task.
+- Assigned tasks automatically appear on the assigned members’ dashboards.
 
-## Learning Laravel
+## 4️⃣ Real-Time Updates
+- When a task’s type/status is updated, the changes are instantly reflected in the dashboards of all assigned users.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 5️⃣ Dashboard
+- View tasks organized by type.
+- Track task status and deadlines at a glance.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 6️⃣ Fully Responsive
+- Designed with Tailwind CSS for a clean, modern look on desktop, tablet, and mobile devices.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+# 🔨 Development
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🛠 Tech Stack
 
-### Premium Partners
+- Backend: [![Laravel](https://img.shields.io/badge/Laravel-11-red?style=flat-square&logo=laravel&logoColor=white)](https://laravel.com/)
+- Frontend: [![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react&logoColor=white)](https://reactjs.org/)
+- Routing & Inertia: [![Inertia.js](https://img.shields.io/badge/Inertia.js-SPA-lightgrey?style=flat-square)](https://inertiajs.com/)
+- Database: [![MySQL](https://img.shields.io/badge/MySQL-Database-orange?style=flat-square&logo=mysql&logoColor=white)](https://www.mysql.com/)
+- Styling: [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-Styling-teal?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+---
 
-## Contributing
+# ☑️ Installation
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Prerequisites
+- PHP >= 8.2.12
+- Composer
+- Node.js >= 22.13
+- MySQL or compatible database
 
-## Code of Conduct
+## Backend Setup (Laravel)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+git clone https://github.com/YourUsername/TASKIFY.git
+cd TASKIFY
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan serve
+cd resources/js
+npm install
+npm run dev
+```
 
-## Security Vulnerabilities
+## 📦 Usage
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. **Register a new account** or **log in** if you already have one.
+2. Inside your **dashboard**, click **"Create Task"** to add a new task.
+3. Fill in the task details:
+   - Title
+   - Description
+   - Deadline
+   - Status (To-do, In Progress, Completed)
+   - Assigned Members
+4. Once created, the task appears in:
+   - Your dashboard
+   - The dashboards of all assigned members
+5. Tasks can be **updated** and **deleted** anytime.
+6. When you update a task’s type/status, it will instantly update for all assigned members.
+7. Manage your tasks and track progress easily via your personalized task board.
 
-## License
+8. 
+# 🤝 Collaborators
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+We collaborated to develop **Edumate**, each contributing to different aspects of the project:
+
+| Name                | GitHub Profile                                      | Role                                                |
+|-------------------- |---------------------------------------------------- |---------------------------------------------------- |
+| **Younes BOUKRIM**  | [BoukrimYounes](https://github.com/BoukrimYounes)   | UI/UX Designer, Frontend Developer (React)          |
+| **Chaimaa AFKIR**   | [Chaimaa101](https://github.com/Chaimaa101)         | Backend Developer , API Tester                      |
+
+
+
