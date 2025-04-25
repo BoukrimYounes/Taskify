@@ -1,12 +1,12 @@
 <h1 align="center">
 	<img
 		width="300"
-		alt="TASKIFY"
+		alt="Taskify"
 		src="https://github.com/BoukrimYounes/Taskify/blob/master/resources/js/public/icon_white.png">
 </h1>
 
 <h3 align="center">
-	TASKIFY– Task Management System
+	Taskify– Task Management System
 </h3>
 
 ## 📖 Table of Contents
@@ -41,7 +41,7 @@ https://github.com/user-attachments/assets/adbc0b42-57eb-4da1-84b9-883ce427b29a
 # ⛓ Description
 
 <p align="center">
-	<b>TASKIFY</b> is a task management application developed to help users efficiently manage their tasks and collaborate with others. Built with Laravel for the backend and ReactJS with Inertia.js for the frontend, it provides a seamless, modern, and responsive interface for creating, assigning, and updating tasks.
+	<b>Taskify</b> is a task management application developed to help users efficiently manage their tasks and collaborate with others. Built with Laravel for the backend and ReactJS with Inertia.js for the frontend, it provides a seamless, modern, and responsive interface for creating, assigning, and updating tasks.
 </p>
 
 ## 1️⃣ User Authentication
@@ -92,8 +92,8 @@ https://github.com/user-attachments/assets/adbc0b42-57eb-4da1-84b9-883ce427b29a
 ## Backend Setup (Laravel)
 
 ```bash
-git clone https://github.com/YourUsername/TASKIFY.git
-cd TASKIFY
+git clone https://github.com/YourUsername/Taskify.git
+cd Taskify
 composer install
 cp .env.example .env
 php artisan key:generate
