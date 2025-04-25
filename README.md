@@ -2,7 +2,7 @@
 	<img
 		width="300"
 		alt="TASKIFY"
-		src="https://github.com/Chaimaa101/Taskify/blob/master/resources/js/public/icon_white.jpg?raw=true">
+		src="https://github.com/Chaimaa101/Taskify/blob/master/resources/js/public/icon_white.png?raw=true">
 </h1>
 
 <h3 align="center">
