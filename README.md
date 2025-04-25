@@ -2,7 +2,7 @@
 	<img
 		width="300"
 		alt="TASKIFY"
-		src="https://github.com/YourUsername/TASkify/blob/main/public/img/logo.jpg">
+		src="https://github.com/Chaimaa101/Taskify/blob/master/storage/public/img/icone_white.jpg?raw=true">
 </h1>
 
 <h3 align="center">
@@ -52,9 +52,6 @@ https://github.com/user-attachments/assets/adbc0b42-57eb-4da1-84b9-883ce427b29a
 - Create, update, and delete tasks.
 - Add task details: title, description, deadline, and status (To-do, In Progress, Completed)
 
-https://github.com/user-attachments/assets/d628ecca-f265-4aa2-b51d-49468e995a2d
-
-.
 
 ## 3️⃣ Task Assignment
 - Assign one or more members to a task.
