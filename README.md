@@ -99,6 +99,9 @@ cp .env.example .env
 php artisan key:generate
 php artisan migrate
 php artisan serve
+```
+## Frontend Setup (React)
+```bash
 cd resources/js
 npm install
 npm run dev
@@ -121,10 +124,10 @@ npm run dev
 6. When you update a task’s type/status, it will instantly update for all assigned members.
 7. Manage your tasks and track progress easily via your personalized task board.
 
-8. 
+
 # 🤝 Collaborators
 
-We collaborated to develop **Edumate**, each contributing to different aspects of the project:
+We collaborated to develop **Taskify**, each contributing to different aspects of the project:
 
 | Name                | GitHub Profile                                      | Role                                                |
 |-------------------- |---------------------------------------------------- |---------------------------------------------------- |
