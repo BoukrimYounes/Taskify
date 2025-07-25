@@ -92,7 +92,7 @@ https://github.com/user-attachments/assets/adbc0b42-57eb-4da1-84b9-883ce427b29a
 ## Backend Setup (Laravel)
 
 ```bash
-git clone https://github.com/YourUsername/Taskify.git
+git clone https://github.com/Chaimaa101/Taskify.git
 cd Taskify
 composer install
 cp .env.example .env
